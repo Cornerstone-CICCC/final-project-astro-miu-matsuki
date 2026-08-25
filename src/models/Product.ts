@@ -24,4 +24,8 @@ export class Product{
     return this.data.inStock;
   }
 
+  getCategory(): string {
+    return this.data.category;
+  }
+
 }

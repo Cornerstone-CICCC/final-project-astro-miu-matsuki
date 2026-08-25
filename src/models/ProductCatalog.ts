@@ -19,10 +19,10 @@ export class ProductCatalog{
   }
 
   // after add getCategory()
-  // getProductsByCategory(category: string): Product[] {
-  //   return this.products.filter(
-  //     (product) => product.getCategory() === category
-  //   );
-  // }
+  getProductsByCategory(category: string): Product[] {
+    return this.products.filter(
+      (product) => product.getCategory() === category
+    );
+  }
 
 }
