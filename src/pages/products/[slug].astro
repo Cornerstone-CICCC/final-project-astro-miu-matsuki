@@ -1,0 +1,34 @@
+---
+// import type { GetStaticPaths } from "astro";
+import products from "../../../products.json";
+import { ProductCatalog } from "../../models/ProductCatalog";
+
+
+export function getStaticPaths(){
+  
+  const catalog = new ProductCatalog(products);
+  const productList = catalog.getAllProducts();
+  return productList.map((product)=>({
+    params: {
+      slug: product.getSlug(),
+    },
+    props:{
+      product,
+    },
+   }));
+  }
+  const { product } = Astro.props;
+  
+---
+
+<h1>{product.getTitle()}</h1>
+<img src={product.getImage()} alt={product.getTitle()}>
+<p>{product.getFormattedPrice()}</p>
+<p>{product.getDescription()}</p>
+<p>Category: {product.getCategory()}</p>
+<p>
+  {product.isInStock() ? "In Stock" : "Out of Stock"}
+</p>
+
+<a href="/">Back to products</a>
+

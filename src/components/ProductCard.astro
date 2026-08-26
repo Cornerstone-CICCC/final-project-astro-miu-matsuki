@@ -1,0 +1,21 @@
+---
+import type { Product } from "../models/Product";
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+---
+
+
+<article>
+  <img src={product.getImage()} alt={product.getTitle()} />
+
+  <h2>{product.getTitle()}</h2>
+
+  <p>{product.getFormattedPrice()}</p>
+
+  <a href={`/products/${product.getSlug()}`}>
+    View Details
+  </a>
+</article>

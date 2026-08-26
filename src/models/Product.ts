@@ -28,4 +28,16 @@ export class Product{
     return this.data.category;
   }
 
+  getTitle(): string {
+  return this.data.title;
+  }
+
+  getImage(): string {
+    return this.data.image;
+  }
+
+  getDescription(): string {
+    return this.data.description;
+  }
+
 }

@@ -1,6 +1,16 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import products from "../../products.json";
+import { ProductCatalog } from "../models/ProductCatalog";
+import ProductCard from "../components/ProductCard.astro";
+
+const catalog = new ProductCatalog(products);
+const productList = catalog.getAllProducts();
+
 ---
 
-<Layout>
-</Layout>
+<h1>Jewelry Shop</h1>
+
+<div>
+	{productList.map((product)=>(<ProductCard product = {product} />
+	))}
+</div>
