@@ -1,16 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-body {
+
+
+* {
   margin: 0;
-  /* background-color: #f5f3f0; */
-  background-color: white;
-  /* font-family: "Bebas Neue", sans-serif; */
+  background-color: #F5F3EF;
+  color: #111111;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+}
+
+header{
+  padding: 30px 50px;
+}
+
+h1{
+  font-size: 32px;
 }
 
 a {
   text-decoration: none;
   color: inherit;
 }
+
+/* .product-card ------------- */
 
 #product-list {
   display: grid;
@@ -30,4 +44,147 @@ a {
   width: 100%;
   height: 250px;
   object-fit: contain;
+}
+
+
+#category-filter {
+  display: flex;
+  justify-content: flex-end;
+  margin:  0 50px;
+}
+
+#filter-toggle {
+  background: none;
+  border: none;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+#category-options {
+  display: none;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+#category-options button {
+  background: none;
+  border: none;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+/*.product-detail ------------------------------ */
+
+.product-detail{
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 40px;
+
+  display: grid;
+  grid-template-columns:  1fr 1fr;
+  gap: 80px;
+
+}
+
+.product-detail img{
+  width: 100%;
+  object-fit: contain;
+}
+
+.product-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-info h1{
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin: 0 0 20px;
+}
+.price {
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+
+.description {
+  max-width: 400px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+.category,
+.stock {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  margin-bottom: 15px;
+}
+
+.back-link {
+  margin-top: 50px;
+  color: #111;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+
+/*mobile ============================================================= */
+@media (max-width:768px){
+
+
+
+#filter-toggle {
+  background: none;
+  border: none;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+#category-options {
+  display: none;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+#category-options button {
+  background: none;
+  border: none;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+
+  /*.product-detail ------------------------------------------------- */
+  
+  .product-detail{
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .product-detail img{
+    height: 400px;
+  }
+  .product-info {
+    text-align: center;
+  }
+  .product-info h1 {
+    font-size: 36px;
+  }
+  .description {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 }

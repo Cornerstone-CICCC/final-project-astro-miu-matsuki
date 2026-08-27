@@ -19,29 +19,49 @@ const categories = [
 ---
 
 <Layout title="Jewelry Shop">
-
   <div id="category-filter">
-    {
-      categories.map((category) => (
-        <button data-category={category}>{category}</button>
-      ))
-    }
+    <div id="category-options">
+      {
+        categories.map((category) => (
+          <button data-category={category}>{category}</button>
+        ))
+      }
+    </div>
+		<button id="filter-toggle"> FILTER + </button>
   </div>
 
   <div id="product-list">
     {productList.map((product) => <ProductCard product={product} />)}
   </div>
+	
 </Layout>
 
 <script>
-  const buttons = document.querySelectorAll<HTMLButtonElement>(
-    "#category-filter button",
-  );
+const filterToggle = document.querySelector<HTMLButtonElement>(
+  "#filter-toggle"
+);
+
+const buttons = document.querySelectorAll<HTMLButtonElement>(
+  "#category-options button"
+);
+
+const categoryOptions = document.querySelector<HTMLElement>(
+  "#category-options"
+);
 
   const productCards = document.querySelectorAll<HTMLElement>(
     "#product-list article",
   );
 
+filterToggle?.addEventListener("click", () => {
+  if (categoryOptions?.style.display === "flex") {
+    categoryOptions.style.display = "none";
+    filterToggle.textContent = "FILTER +";
+  } else {
+    categoryOptions!.style.display = "flex";
+    filterToggle!.textContent = "FILTER −";
+  }
+});
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const category = button.dataset.category;

@@ -8,22 +8,10 @@ const { product } = Astro.props;
 ---
 
 
-<article data-category={product.getCategory()}>
+<article class="product-card" data-category={product.getCategory()}>
   <a href={`/products/${product.getSlug()}`}>
     <img src={product.getImage()} alt={product.getTitle()} />
     <h2>{product.getTitle()}</h2>
     <p>{product.getFormattedPrice()}</p>
   </a>
 </article>
-
-<style>
-*{
-  
-}
-
-*{}
-  img {
-    width: 100%;
-    object-fit: cover;
-  }
-</style>
